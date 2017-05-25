@@ -1,21 +1,15 @@
 pragma solidity ^0.4.11;
 
 library FarmerRegistryLibrary {
+  struct Farmer
+  {
+    address farmer_address;
+    uint256 balance;
 
-  mapping(address => uint) balances;
-  mapping (address => mapping (address => uint)) allowed;
-
-  modifier onlyPayloadSize(uint size) {
-     if(msg.data.length != size + 4) {
-       throw;
-     }
-     _;
   }
+  mapping(uint => Farmer) Farmers;
 
-  function transfer(address _to, uint _value) onlyPayloadSize(2 * 32) returns (bool success) {
-    balances[msg.sender] = safeSub(balances[msg.sender], _value);
-    balances[_to] = safeAdd(balances[_to], _value);
-    Transfer(msg.sender, _to, _value);
-    return true;
+  function getFarmer(uint id) returns (bool success) {
+    
   }
 }

@@ -7,7 +7,6 @@ contract StorjChannel {
   using FarmerRegisteryLibrary for FarmerRegisteryLibrary.Data;
   FarmerRegisteryLibrary.Data public data;
 
-
   function StorjChannel(address _to, uint _value) {
 
   }
